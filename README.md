@@ -2,6 +2,8 @@
 
 An easy to use Twitter stream scraper.
 
+Based on [Python-Twitter](https://github.com/bear/python-twitter)
+
 #### _API Keys_
 
 You can get API keys by creating an App on the [Twitter Developer](https://developer.twitter.com/) site
