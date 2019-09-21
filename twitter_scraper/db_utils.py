@@ -1,10 +1,22 @@
 import os
 import sqlite3
 from sqlite3 import Error
-from sql_queries import *
+
+from .sql_queries import *
+
+
+__summary__ = 'SQL queries separated from code for readability'
+__author__ = 'Ryan Callihan'
+__version__ = '1.0.0'
+__maintainer__ = 'Ryan Callihan'
+__email__ = 'ryancallihan@gmail.com'
 
 
 class DB:
+
+    """
+    Tools for working with the database
+    """
 
     def __init__(self, dbpath):
         create = True
@@ -15,6 +27,13 @@ class DB:
             self._create_table()
 
     def insert(self, data):
+        """
+        Insert element into db table
+
+        :param data: Data in order specified in sql_queries.py
+        :type data: tuple
+        :return:
+        """
         c = self._conn.cursor()
         ins = INSERT.format(*data)
         c.execute(ins)
@@ -35,6 +54,11 @@ class DB:
             print(e)
 
     def close(self):
+        """
+        Close connection to database
+
+        :return:
+        """
         if self._conn:
             self._conn.close()
 
