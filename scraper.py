@@ -60,7 +60,7 @@ if __name__ == '__main__':
     if terms != [None]:
         vars['track'] = terms
     if lang != [None]:
-        vars['langauges'] = lang
+        vars['languages'] = lang
     if rt is not None:
         rt = True
     else:
@@ -69,6 +69,6 @@ if __name__ == '__main__':
     print('Vars used for stream:')
     for k, v in vars.items():
         print('\t- {}: {}'.format(k, v))
-
+    # vars['filter_level'] = 'low'
     scraper = TwitterScraper(ck, cs, ak, ass, db, rt, **vars)
     scraper.scrape()
